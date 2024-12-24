@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+    
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリックでキャラクターを移動するゲーム</title>
+    
+   
+<style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #gameArea {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #87ceeb;
+        }
+
+        #character {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    
+    
+<div id="gameArea">
+        <div id="character"></div>
+    </div>
+
+    
+
+   
+<script>
+   
+
+        // ゲームのロジック
+        const gameArea = document.getElementById('g
+
+        // ゲームのロジック
+        const gameArea = document.getElementById('gameArea');
+        const character = document.getElementById('charac
+
+        // ゲームのロジック
+        const gameArea = document.getElementById('gameArea');
+        const character = document.getElementById('character');
+
+        // ゲームエリアをクリックした時にキャラクターをその位置に移動
+        gameArea.addEventListener('click', (e) => {
+            // クリック位置を取得
+            const x = e.clientX - character.offsetWidth / 2;
+            const y = e.clientY - character.offsetHeight / 2;
+
+            // キャラクターを新しい位置に移動
+            character.style.left = `${x}px`;
+            character.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
